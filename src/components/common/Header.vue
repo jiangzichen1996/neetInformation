@@ -1,11 +1,12 @@
 <template>
-  <div>
-      <h2 class="title">Animation</h2> 
+  <div class="title" :style='{"background":bg}'>
+      <!-- <h2 class="title">Animation</h2>  -->
+      <slot name='title' ></slot>
   </div>
 </template>
 <script>
 export default {
-  
+  props:['bg']
 }
 </script>
 <style scoped>
@@ -16,11 +17,11 @@ export default {
 }
 .title{
     height: 1rem;
-    background: rgb(131,175,155);
     position:fixed;
     top: 0;
     width: 100%;
     color: white;
+    z-index: 999;
 
 }
 </style>

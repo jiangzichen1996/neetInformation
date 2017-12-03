@@ -7,13 +7,18 @@ import '@/assets/css/reset.css'
 import '@/assets/js/rem'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
-Vue.config.productionTip = false
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
+import store from "@/vuex/store"
+import VueTouch from 'vue-touch'
+
+
+Vue.use(VueAwesomeSwiper)
+Vue.use(VueTouch, {name: 'v-touch'})
+global.API_PROXY = 'https://bird.ioliu.cn/v1/?url='
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
-  components: { App
-    }
+  components: { App}
 })
